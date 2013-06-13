@@ -1,0 +1,6 @@
+[submodule "GitHubAPI"]
+	path = GitHubAPI
+	url = git://github.com/drdamour/csharp-github-api.git
+[submodule "SpringloopsAPI"]
+	path = SpringloopsAPI
+	url = git://github.com/drdamour/SpringloopsAPI.git

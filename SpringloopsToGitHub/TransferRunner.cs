@@ -1,5 +1,17 @@
-﻿using System;
+﻿using GitHubAPI;
+using GitHubAPI.Api.Repositories;
+using GitHubAPI.Api.Issues;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RestSharp;
+using SpringloopsAPI;
+using SpringloopsAPI.Api.Tasks;
+using SpringloopsAPI.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using GitHubAPI.Models;
+using System.Text.RegularExpressions;
 
 namespace SpringloopsToGitHub
 {
@@ -13,7 +25,7 @@ namespace SpringloopsToGitHub
             /*
              * START CONFIG SECTION - modify the stuff in this section to your specific info
              */
-
+            string SpringLoopsUrl = "";
             long ReportID = 0; //The Id of the report to migrate issues from in springloops
             string SLCookieValue = ""; //this is the token id in the springloops session, use a tool like fiddler to sniff this after logging into SL the cookies name should be SLS2_SESSIDv4
 
@@ -62,7 +74,7 @@ namespace SpringloopsToGitHub
 
 
 
-            var slclient = new SpringloopsAPIClient(Url).WithAuthentication(new cookieauth(SLCookieValue));
+            var slclient = new SpringloopsAPIClient(SpringLoopsUrl).WithAuthentication(new cookieauth(SLCookieValue));
 
             
 
